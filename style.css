@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  color: #d4af37;
+}
+
+.hero p {
+  margin: 10px 0;
+  color: #ccc;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #d4af37;
+  color: black;
+}
+
+/* PRODUCT SECTION */
+#products {
+  padding: 80px 10%;
+}
+
+.product-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 80px;
+  align-items: center;
+  grid-template-areas: "text image";
+}
+
+.product-showcase .text {
+  grid-area: text;
+}
+
+.product-showcase .image-container {
+  grid-area: image;
+}
+
+.product-showcase.reverse {
+  grid-template-areas: "image text";
+}
+
+
+
+/* IMAGE HOVER EFFECT 🔥 */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.image-container img {
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.1);
+  filter: blur(2px);
+}
+
+/* OVERLAY TEXT */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.image-container:hover .overlay-text {
+  opacity: 1;
+}
+
+.overlay-text h3 {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+}
+
+.overlay-text p {
+  color: #fff;
+}
+
+/* TEXT SIDE */
+.text h2 {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  margin-bottom: 10px;
+}
+
+.text span {
+  display: block;
+  margin-top: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+
+/* ABOUT & CONTACT */
+.about, .contact {
+  padding: 80px 10%;
+  text-align: center;
+  background: #0a0a0a;
+}
+
+.about h2, .contact h2 {
+  font-family: 'Playfair Display', serif;
+  color: #d4af37;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.about p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 800px;
+  margin: 40px auto 0;
+}
+
+.contact-grid div {
+  padding: 20px;
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  border-radius: 10px;
+}
+
+.contact-grid strong {
+  color: #d4af37;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .product-showcase {
+    grid-template-columns: 1fr;
+  }
+}
